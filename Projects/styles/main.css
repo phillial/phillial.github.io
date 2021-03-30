@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Nunito&display=swap');
+
+:root {
+    --vertical-space: 2rem;
+    --horizontal-space: 3rem;
+
+    --body-color:#E6E7E9;
+    --header-color:#000000;
+    --contrast-color:#E6D273;
+    --heading-color:#730707;
+}
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    background-image: linear-gradient(326deg, rgba(236, 236, 236,0.04) 0%, rgba(236, 236, 236,0.04) 6%,rgba(157, 157, 157,0.04) 6%, rgba(157, 157, 157,0.04) 29%,rgba(77, 77, 77,0.04) 29%, rgba(77, 77, 77,0.04) 100%),linear-gradient(164deg, rgba(236, 236, 236,0.04) 0%, rgba(236, 236, 236,0.04) 36%,rgba(157, 157, 157,0.04) 36%, rgba(157, 157, 157,0.04) 61%,rgba(77, 77, 77,0.04) 61%, rgba(77, 77, 77,0.04) 100%),linear-gradient(336deg, rgba(236, 236, 236,0.04) 0%, rgba(236, 236, 236,0.04) 64%,rgba(157, 157, 157,0.04) 64%, rgba(157, 157, 157,0.04) 69%,rgba(77, 77, 77,0.04) 69%, rgba(77, 77, 77,0.04) 100%),linear-gradient(90deg, rgba(0,0,0, 0.95),rgba(0,0,0, 0.95));
+    color: var(--body-color);
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    font-family: 'Nunito', sans-serif;
+    color: var(--header-color);
+}
+
+
+body#about img { height: 15em; }
+
+p {
+    max-width: 50em;
+}
+
+body {
+    display: grid;
+    grid-template-areas: "head head"
+                         "nav nav"
+                         "main main"
+                         "foot foot";
+    grid-template-rows: auto auto 1fr auto;                 
+}
+
+@media screen and (min-width: 26em) {
+    body {
+        grid-template-areas: "head nav"
+                             "main  main"
+                             "foot foot";
+        grid-template-columns: 3fr 5fr;
+        grid-template-rows: auto 1fr auto;              
+    }
+}
+
+@media screen and (width: 768px) {
+    body {
+        grid-template-areas: "head nav"
+                             "main  main"
+                             "foot foot";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr auto;                 
+    }
+}
+
+@media screen and (width: 540px) {
+    body {
+        grid-template-areas: "head nav"
+                             "main  main"
+                             "foot foot";
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto 1fr auto;                 
+    }
+}
+
+
+body > * {
+    padding-left: var(--horizontal-space);
+    padding-right: var(--horizontal-space);
+}
+
+body > header {
+    grid-area: head;
+    background-color: var(--body-color);
+}
+
+body > nav {
+    grid-area: nav;
+    background-color: var(--body-color);
+}
+
+body > nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+body > nav ul li {
+    display: inline;
+    padding-right: 1em;
+}
+
+body > main {
+    grid-area: main;
+}
+
+body > main h1 {
+    color: var(--body-color);
+}
+
+body > footer {
+    grid-area: foot;
+}
+
+header, footer {
+    padding-top: 1.33rem;
+    padding-bottom: 1.33rem;
+}
+
+header h1, footer h1 {
+    margin: 0;
+}
+
+
+body#portfolio ul#portfolioList {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+}
+
+@media screen and (min-width: 26em) {
+    body#portfolio ul#portfolioList li {
+        flex-basis: 48%;
+        padding-right: 2%;
+    }
+}
+
+body#portfolio ul#portfolioList li img {
+    max-width: 100%;
+}
+
+a {
+    color: var(--body-color);
+    text-decoration-color: var(--contrast-color);
+}
+a:hover {
+    color: var(--heading-color);
+    text-decoration-color: var(--heading-color);
+}
+
+body > nav a {
+    color: var(--heading-color);
+    text-decoration-color: var(--header-color);
+}
+
+body > nav a:hover {
+    color: var(--contrast-color);
+    text-decoration-color: var(--heading-color);
+}
