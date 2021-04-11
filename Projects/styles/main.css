@@ -4,9 +4,9 @@
     --vertical-space: 2rem;
     --horizontal-space: 3rem;
 
-    --body-color:#E6E7E9;
-    --header-color:#000000;
-    --contrast-color:#E6D273;
+    --header-color:#E6E7E9;
+    --body-color:#000000;
+    --contrast-color:#94FCFE;
     --heading-color:#730707;
 }
 
@@ -14,33 +14,69 @@ body {
     font-family: 'Fira Sans', sans-serif;
     font-size: 18px;
     line-height: 1.5;
-    background-image: linear-gradient(326deg, rgba(236, 236, 236,0.04) 0%, rgba(236, 236, 236,0.04) 6%,rgba(157, 157, 157,0.04) 6%, rgba(157, 157, 157,0.04) 29%,rgba(77, 77, 77,0.04) 29%, rgba(77, 77, 77,0.04) 100%),linear-gradient(164deg, rgba(236, 236, 236,0.04) 0%, rgba(236, 236, 236,0.04) 36%,rgba(157, 157, 157,0.04) 36%, rgba(157, 157, 157,0.04) 61%,rgba(77, 77, 77,0.04) 61%, rgba(77, 77, 77,0.04) 100%),linear-gradient(336deg, rgba(236, 236, 236,0.04) 0%, rgba(236, 236, 236,0.04) 64%,rgba(157, 157, 157,0.04) 64%, rgba(157, 157, 157,0.04) 69%,rgba(77, 77, 77,0.04) 69%, rgba(77, 77, 77,0.04) 100%),linear-gradient(90deg, rgba(0,0,0, 0.95),rgba(0,0,0, 0.95));
+    background-image: linear-gradient(326deg, rgba(236, 236, 236,0.04) 0%, rgba(236, 236, 236,0.04) 6%,rgba(157, 157, 157,0.04) 6%, rgba(157, 157, 157,0.04) 29%,rgba(77, 77, 77,0.04) 29%, rgba(77, 77, 77,0.04) 100%),linear-gradient(164deg, rgba(236, 236, 236,0.04) 0%, rgba(236, 236, 236,0.04) 36%,rgba(157, 157, 157,0.04) 36%, rgba(157, 157, 157,0.04) 61%,rgba(77, 77, 77,0.04) 61%, rgba(77, 77, 77,0.04) 100%),linear-gradient(336deg, rgba(236, 236, 236,0.04) 0%, rgba(236, 236, 236,0.04) 64%,rgba(157, 157, 157,0.04) 64%, rgba(157, 157, 157,0.04) 69%,rgba(77, 77, 77,0.04) 69%, rgba(77, 77, 77,0.04) 100%),linear-gradient(90deg, rgba(0,0,0, 0.011764705882352941),rgba(0,0,0, 0.011764705882352941));    color: var(--body-color);
+}
+
+h1 {
+    line-height: 1.2;
+    font-family: 'Nunito', sans-serif;
+    color: var(--contrast-color);
+}
+
+h2, h3 {
+    line-height: 1.2;
+    font-family: 'Nunito', sans-serif;
     color: var(--body-color);
 }
 
-h1, h2, h3 {
-    line-height: 1.2;
-    font-family: 'Nunito', sans-serif;
-    color: var(--header-color);
+/* body#portfolio body#resume */
+
+body { 
+    height: 15em; 
+    display: grid;
+    grid-template-areas: "head nav"
+                         "main main"
+                         "foot foot";
+    grid-template-rows: auto auto auto auto;
 }
 
+body#about { 
+    display: flex;
+    flex-direction: column;
+}
 
-body#about img { height: 15em; }
+body#about main {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+body#about > main > h1 {
+    flex: 1 0 100%;
+    border:var(--contrast-color);
+}
+
+body#about > main > img {
+    border:var(--contrast-color);
+    border-style: solid;
+    border-width: 0.5em;
+    padding-right: right 1em;
+    max-height: 20em;
+    width: auto;
+}
+
+body#about > main > div {
+    margin-left: 1em;
+}
+
 
 p {
     max-width: 50em;
 }
 
-body {
-    display: grid;
-    grid-template-areas: "head head"
-                         "nav nav"
-                         "main main"
-                         "foot foot";
-    grid-template-rows: auto auto 1fr auto;                 
-}
 
-@media screen and (min-width: 26em) {
+/* @media screen and (min-width: 26em) {
     body {
         grid-template-areas: "head nav"
                              "main  main"
@@ -68,7 +104,7 @@ body {
         grid-template-columns: 2fr 1fr;
         grid-template-rows: auto 1fr auto;                 
     }
-}
+} */
 
 
 body > * {
@@ -79,6 +115,7 @@ body > * {
 body > header {
     grid-area: head;
     background-color: var(--body-color);
+
 }
 
 body > nav {
@@ -106,6 +143,7 @@ body > main h1 {
 
 body > footer {
     grid-area: foot;
+    background-color: var(--contrast-color);
 }
 
 header, footer {
@@ -134,24 +172,26 @@ body#portfolio ul#portfolioList {
 }
 
 body#portfolio ul#portfolioList li img {
-    max-width: 100%;
+    max-height: 16em;
+    width: auto;
 }
 
 a {
     color: var(--body-color);
-    text-decoration-color: var(--contrast-color);
+    text-decoration-color: var(--body-color);
 }
+
 a:hover {
-    color: var(--heading-color);
-    text-decoration-color: var(--heading-color);
+    color: var(--header-color);
+    text-decoration-color: var(--header-color);
 }
 
 body > nav a {
-    color: var(--heading-color);
+    color: var(--contrast-color);
     text-decoration-color: var(--header-color);
 }
 
 body > nav a:hover {
-    color: var(--contrast-color);
-    text-decoration-color: var(--heading-color);
+    color: var(--header-color);
+    text-decoration-color: var(--header-color);
 }
