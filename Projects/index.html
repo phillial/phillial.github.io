@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Avery Phillips' personal cite</title>
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/main.css" />
@@ -12,20 +12,24 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
   </head>
-  <body class="container" id="about">
-    <header class="col-3">
+  <body id="about">
+    <header>
       <h1>Avery L. Phillips</h1>
     </header>
-    <nav class="col-9">
+    <nav>
       <ul>
-        <li><a href="index.html">About</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="resume.html">Resume</a></li>
+        <li><a id="aboutFile" href="index.html">About</a></li>
+        <li><a id="portfolioFile" href="portfolio.html">Portfolio</a></li>
+        <li><a id="resumeFile" href="resume.html">Resume</a></li>
       </ul>
     </nav>
-    <main class="row">
-      <h1>About</h1>
-      <img src="images/AboutPicture.jpg"/>
+    <main>
+      <h1>
+        About
+        <hr>
+      </h1>
+      <div>
+        <img src="images/AboutPicture.jpg" alt="A photo of me at my home"/>
         <div>
           <p> Hi there! My name is Avery Phillips, and I'm a freshman student at 
             Rose-Hulman Institute of Technology studying computer science, electrical 
@@ -41,9 +45,11 @@
             a large verity of ways is more that just a job to me, but that it has been
             on of the main passions of my life up to this point. 
           </p>
+        </div>
       </div>
     </main>
-    <footer class="row">
+    <button id="scrollBtn">Scroll To Top</button>
+    <footer>
         <div>
         You can email me at: <a href="mailto:phillial@rose-hulman.edu">phillial@rose-hulman.edu</a>
       </div>
